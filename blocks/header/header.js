@@ -2,6 +2,7 @@ import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 
 const isDesktop = window.matchMedia('(min-width: 900px)');
+let megaMenuHoverTimeout;
 
 const CATEGORY_IMAGES = {
   Mice: 'https://resource.logitech.com/w_115,h_115,ar_1,c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/navigation/logi/logi-nav/logitech-navigation-mice-mx-master-4.png',
@@ -76,6 +77,21 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
   document.body.style.overflowY = (expanded || isDesktop.matches) ? '' : 'hidden';
   nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
   button.setAttribute('aria-label', expanded ? 'Open navigation' : 'Close navigation');
+
+  // Toggle mobile overlay backdrop
+  let overlay = nav.closest('.nav-wrapper')?.querySelector('.nav-overlay');
+  if (!expanded && !isDesktop.matches) {
+    if (!overlay) {
+      overlay = document.createElement('div');
+      overlay.className = 'nav-overlay';
+      overlay.addEventListener('click', () => toggleMenu(nav, navSections));
+      nav.closest('.nav-wrapper').append(overlay);
+    }
+    overlay.classList.add('visible');
+  } else if (overlay) {
+    overlay.classList.remove('visible');
+  }
+
   if (!expanded || isDesktop.matches) {
     window.addEventListener('keydown', closeOnEscape);
   } else {
@@ -83,12 +99,60 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
   }
 }
 
+function buildPromoPanel() {
+  const panel = document.createElement('div');
+  panel.className = 'promo-panel';
+  panel.setAttribute('aria-hidden', 'true');
+  panel.innerHTML = `
+    <button class="promo-panel-close" aria-label="Close offers">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="promo-panel-grid">
+      <div class="promo-card">
+        <h4>Freshen Up Your Setup</h4>
+        <p>Up to 30% Off</p>
+        <a href="/en-us/shop/deals">SHOP DEALS <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
+      </div>
+      <div class="promo-card">
+        <h4>20% OFF for Students &amp; Heroes</h4>
+        <p>Verify your status to unlock the discount.</p>
+        <a href="/en-us/programs/sheer-id">VERIFY STATUS <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
+      </div>
+      <div class="promo-card">
+        <h4>Save up to $100 when you bundle MX Master 4*</h4>
+        <p>Pair with select workspace products.</p>
+        <a href="/en-us/campaigns/mx-master-4-product-ecosystem">BUNDLE &amp; SAVE <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
+      </div>
+      <div class="promo-card">
+        <h4>FREE Tablet Stand with Keys-To-Go 2</h4>
+        <p>Limited time offer.</p>
+        <a href="/en-us/shop/p/keys-to-go-2">SHOP KEYS-TO-GO 2 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
+      </div>
+    </div>
+    <div class="promo-panel-shipping">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      <span><strong>Free Standard Shipping</strong> &mdash; On all orders over $29.00</span>
+    </div>
+  `;
+  return panel;
+}
+
+function togglePromoPanel(utility) {
+  const panel = utility.querySelector('.promo-panel');
+  const promo = utility.querySelector('.nav-utility-promo');
+  if (!panel) return;
+  const isHidden = panel.getAttribute('aria-hidden') !== 'false';
+  panel.setAttribute('aria-hidden', isHidden ? 'false' : 'true');
+  promo.classList.toggle('open', isHidden);
+}
+
 function buildUtilityBar() {
   const utility = document.createElement('div');
   utility.className = 'nav-utility';
   utility.innerHTML = `
     <div class="nav-utility-promo">
-      <span>20% OFF for Students &amp; Heroes</span>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      <span>Save up to $100 when you bundle MX Master 4*</span>
     </div>
     <div class="nav-utility-links">
       <a href="https://www.logitechg.com/en-us">Logitech G</a>
@@ -96,9 +160,23 @@ function buildUtilityBar() {
       <a href="/en-us/education.html">Education</a>
       <a href="/en-us/shop/outlet">Outlet</a>
       <a href="https://support.logi.com/hc/en-us">Support</a>
-      <span class="nav-locale">US, en</span>
+      <span class="nav-locale"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>US,EN</span>
     </div>
   `;
+
+  const promoPanel = buildPromoPanel();
+  utility.append(promoPanel);
+
+  // Toggle panel on promo click
+  const promoTrigger = utility.querySelector('.nav-utility-promo');
+  promoTrigger.addEventListener('click', () => togglePromoPanel(utility));
+
+  // Close button
+  promoPanel.querySelector('.promo-panel-close').addEventListener('click', (e) => {
+    e.stopPropagation();
+    togglePromoPanel(utility);
+  });
+
   return utility;
 }
 
@@ -244,7 +322,7 @@ export default async function decorate(block) {
     if (section) section.classList.add(`nav-${c}`);
   });
 
-  // Strip button classes from brand and add logo image
+  // Strip button classes from brand and add animated logo
   const navBrand = nav.querySelector('.nav-brand');
   if (navBrand) {
     const brandLink = navBrand.querySelector('.button') || navBrand.querySelector('a');
@@ -252,14 +330,23 @@ export default async function decorate(block) {
       brandLink.className = '';
       const bc = brandLink.closest('.button-container');
       if (bc) bc.className = '';
-      const logoImg = document.createElement('img');
-      logoImg.src = '/icons/logitech-logo.svg';
-      logoImg.alt = 'Logitech';
-      logoImg.width = 110;
-      logoImg.height = 24;
-      logoImg.loading = 'eager';
+      const logoSpan = document.createElement('span');
+      logoSpan.className = 'nav-brand-logo';
+      logoSpan.setAttribute('role', 'img');
+      logoSpan.setAttribute('aria-label', 'Logitech');
       brandLink.textContent = '';
-      brandLink.append(logoImg);
+      brandLink.append(logoSpan);
+
+      // Trigger sprite animation on page load and on hover
+      setTimeout(() => logoSpan.classList.add('play'), 100);
+      brandLink.addEventListener('mouseenter', () => {
+        logoSpan.classList.remove('play');
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            logoSpan.classList.add('play');
+          });
+        });
+      });
     }
   }
 
@@ -294,9 +381,25 @@ export default async function decorate(block) {
         shopBtn.setAttribute('aria-haspopup', 'true');
         item.append(shopBtn);
 
+        // Click to toggle on mobile
         shopBtn.addEventListener('click', (e) => {
           e.stopPropagation();
-          toggleMegaMenu(nav);
+          if (!isDesktop.matches) {
+            toggleMegaMenu(nav);
+          }
+        });
+
+        // Hover to open on desktop
+        item.addEventListener('mouseenter', () => {
+          if (isDesktop.matches) {
+            clearTimeout(megaMenuHoverTimeout);
+            openMegaMenu(nav);
+          }
+        });
+        item.addEventListener('mouseleave', () => {
+          if (isDesktop.matches) {
+            megaMenuHoverTimeout = setTimeout(() => closeMegaMenu(nav), 200);
+          }
         });
       }
     });
@@ -309,14 +412,42 @@ export default async function decorate(block) {
   // Build utility bar
   const utilityBar = buildUtilityBar();
 
-  // Hamburger for mobile
+  // Hamburger for mobile (placed on right side)
   const hamburger = document.createElement('div');
   hamburger.classList.add('nav-hamburger');
   hamburger.innerHTML = `<button type="button" aria-controls="nav" aria-label="Open navigation">
       <span class="nav-hamburger-icon"></span>
     </button>`;
   hamburger.addEventListener('click', () => toggleMenu(nav, navSections));
-  nav.prepend(hamburger);
+  nav.append(hamburger);
+
+  // Add mobile-only footer content to nav-sections
+  if (navSections) {
+    const mobileFooter = document.createElement('div');
+    mobileFooter.className = 'nav-mobile-footer';
+    mobileFooter.innerHTML = `
+      <div class="nav-mobile-divider"></div>
+      <ul class="nav-mobile-links">
+        <li><a href="https://www.logitechg.com/en-us">Logitech G</a></li>
+        <li><a href="/en-us/business.html">Business</a></li>
+        <li><a href="/en-us/education.html">Education</a></li>
+        <li><a href="/en-us/shop/outlet">Outlet</a></li>
+        <li><a href="https://support.logi.com/hc/en-us">Support</a></li>
+      </ul>
+      <div class="nav-mobile-bottom">
+        <a href="/en-us/change-location" class="nav-mobile-locale">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span>US,EN</span>
+        </a>
+        <a href="#" class="nav-mobile-wishlist">
+          ${TOOL_ICONS.Wishlist}
+          <span>Wishlist</span>
+        </a>
+      </div>
+    `;
+    navSections.append(mobileFooter);
+  }
+
   nav.setAttribute('aria-expanded', 'false');
   toggleMenu(nav, navSections, isDesktop.matches);
   isDesktop.addEventListener('change', () => {
@@ -328,6 +459,16 @@ export default async function decorate(block) {
   if (megaMenu) {
     nav.append(megaMenu);
     megaMenu.querySelector('.mega-menu-close').addEventListener('click', () => closeMegaMenu(nav));
+
+    // Keep mega menu open when cursor moves into it
+    megaMenu.addEventListener('mouseenter', () => {
+      clearTimeout(megaMenuHoverTimeout);
+    });
+    megaMenu.addEventListener('mouseleave', () => {
+      if (isDesktop.matches) {
+        megaMenuHoverTimeout = setTimeout(() => closeMegaMenu(nav), 200);
+      }
+    });
   }
 
   // Build final structure
