@@ -1,0 +1,38 @@
+{
+  "variantName": "hero-campaign",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-03-24T19:27:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.logitech.com/en-us",
+    "originPage": "brand homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "colored",
+    "density": "spacious",
+    "purpose": "campaign-banner",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "background-image + heading + description + CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "campaign landing pages",
+      "promotional banners",
+      "seasonal event sections"
+    ],
+    "notSuitableFor": [
+      "product detail pages",
+      "text-only hero sections"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/en-us"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-24T19:27:00.000Z"
+  }
+}

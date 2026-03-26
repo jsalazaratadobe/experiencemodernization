@@ -1,0 +1,38 @@
+{
+  "variantName": "cards-benefit",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-03-24T19:27:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.logitech.com/en-us",
+    "originPage": "brand homepage",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "value-proposition",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "icon + heading + description + optional-CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "value proposition sections",
+      "benefit/feature highlights",
+      "why-buy-here sections"
+    ],
+    "notSuitableFor": [
+      "product showcases with large images",
+      "category navigation"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/en-us"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-24T19:27:00.000Z"
+  }
+}

@@ -76,6 +76,20 @@ function buildAutoBlocks(main) {
 }
 
 /**
+ * Moves instrumentation data attributes from one element to another.
+ * @param {Element} source The source element
+ * @param {Element} target The target element
+ */
+export function moveInstrumentation(source, target) {
+  [...source.attributes]
+    .filter((attr) => attr.name.startsWith('data-aue-') || attr.name.startsWith('data-richtext-'))
+    .forEach((attr) => {
+      target.setAttribute(attr.name, attr.value);
+      source.removeAttribute(attr.name);
+    });
+}
+
+/**
  * Decorates the main element.
  * @param {Element} main The main element
  */

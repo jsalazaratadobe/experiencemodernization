@@ -1,0 +1,162 @@
+{
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://www.logitech.com/en-us"
+      ],
+      "description": "Logitech brand homepage with hero banners, product category showcases, and promotional content",
+      "blocks": [
+        {
+          "name": "cards-quicklinks",
+          "instances": [
+            "section.quick-links .layout"
+          ]
+        },
+        {
+          "name": "hero-product",
+          "instances": [
+            "section.hero-product-banner"
+          ]
+        },
+        {
+          "name": "hero-campaign",
+          "instances": [
+            "section.background-banner"
+          ]
+        },
+        {
+          "name": "cards-promo",
+          "instances": [
+            "div.card-grid .editorial-card"
+          ]
+        },
+        {
+          "name": "cards-category",
+          "instances": [
+            "section.standard-cards[aria-label*='popular product categories'] .carousel",
+            "section.standard-cards[aria-label*='Shop by interest'] .carousel"
+          ]
+        },
+        {
+          "name": "cards-thumbnail",
+          "instances": [
+            "div.block-spacing .grid-columns"
+          ]
+        },
+        {
+          "name": "cards-benefit",
+          "instances": [
+            "main div.max-width-padding.relative .grid.grid-cols-2"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Quick Links",
+          "selector": "section.quick-links",
+          "style": null,
+          "blocks": [
+            "cards-quicklinks"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "Hero Product Banner",
+          "selector": "section.hero-product-banner",
+          "style": null,
+          "blocks": [
+            "hero-product"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-3",
+          "name": "Wellness Campaign Banner",
+          "selector": "section.background-banner",
+          "style": "teal-gradient",
+          "blocks": [
+            "hero-campaign"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-4",
+          "name": "Product Cards Grid",
+          "selector": "div.card-grid.parallax",
+          "style": null,
+          "blocks": [
+            "cards-promo"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-5",
+          "name": "Popular Product Categories",
+          "selector": "section.standard-cards[aria-label*='popular product categories']",
+          "style": null,
+          "blocks": [
+            "cards-category"
+          ],
+          "defaultContent": [
+            "section.standard-cards[aria-label*='popular product categories'] h2:first-of-type"
+          ]
+        },
+        {
+          "id": "section-6",
+          "name": "Sustainability Section",
+          "selector": "section.sustainability",
+          "style": "dark",
+          "blocks": [
+            "cards-category"
+          ],
+          "defaultContent": [
+            "h2:contains('Design for sustainability')",
+            "h2:contains('Everything matters')",
+            "p:contains('When it comes to doing better')",
+            "a[href*='everything-matters']"
+          ]
+        },
+        {
+          "id": "section-7",
+          "name": "Shop by Product Category",
+          "selector": "div.max-width-padding.block-spacing:has(h2)",
+          "style": null,
+          "blocks": [
+            "cards-thumbnail"
+          ],
+          "defaultContent": [
+            "h2:contains('Shop by product category')"
+          ]
+        },
+        {
+          "id": "section-8",
+          "name": "Shop by Interest",
+          "selector": "section.standard-cards[aria-label*='Shop by interest']",
+          "style": null,
+          "blocks": [
+            "cards-category"
+          ],
+          "defaultContent": [
+            "section.standard-cards[aria-label*='Shop by interest'] h2:first-of-type"
+          ]
+        },
+        {
+          "id": "section-9",
+          "name": "Reasons to Buy",
+          "selector": "div.max-width-padding:has(h2:contains('Reasons to buy'))",
+          "style": null,
+          "blocks": [
+            "cards-benefit"
+          ],
+          "defaultContent": [
+            "h2:contains('Reasons to buy')",
+            "p:contains('We are all about making')"
+          ]
+        }
+      ]
+    }
+  ]
+}

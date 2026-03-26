@@ -1,0 +1,38 @@
+{
+  "variantName": "cards-promo",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-03-24T19:27:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.logitech.com/en-us",
+    "originPage": "brand homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "product-promotion",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + heading + description + CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "promotional card grids",
+      "featured product showcases",
+      "marketing offer cards"
+    ],
+    "notSuitableFor": [
+      "icon-based navigation",
+      "simple category links"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/en-us"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-24T19:27:00.000Z"
+  }
+}

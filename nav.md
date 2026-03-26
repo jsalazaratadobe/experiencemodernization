@@ -1,0 +1,42 @@
+- [Logitech](/)
+
+---
+
+- **Shop**
+  - **Shop by category**
+    - [Mice](/en-us/shop/c/mice)
+    - [Keyboards](/en-us/shop/c/keyboards)
+    - [Combos](/en-us/shop/c/combos)
+    - [Webcams](/en-us/shop/c/webcams)
+    - [iPad Keyboard Cases](/en-us/shop/c/ipad-keyboards)
+    - [Gaming](https://www.logitechg.com/en-us)
+  - **More categories**
+    - [Headsets](/en-us/shop/c/headsets)
+    - [Microphones](/en-us/shop/c/microphones)
+    - [Speakers](/en-us/shop/c/speakers)
+    - [Digital Pens](/en-us/shop/c/digital-pens)
+    - [Presentation Remotes](/en-us/shop/c/presenters)
+    - [Mouse Pads](/en-us/shop/c/gaming-mouse-pads)
+    - [Refurbished Products](/en-us/shop/c/certified-refurb)
+    - [Accessories](/en-us/shop/c/accessories)
+    - [Best Sellers](/en-us/shop/c/best-sellers)
+  - **Shop your way**
+    - [MX Series](/en-us/discover/c/master-series)
+    - [Ergo Series](/en-us/discover/c/ergo-series)
+    - [For Mac](/en-us/discover/c/for-mac)
+    - [For iPad](/en-us/discover/c/for-ipad)
+  - **Explore more**
+    - [MX for Creatives](/en-us/discover/c/mx-creatives)
+    - [MX for Coders](/en-us/discover/c/mx-coders)
+    - [On The Go](https://www.logitech.com/mobility/mobile-solutions.html)
+    - [Ultimate Ears](/en-us/discover/c/ultimate-ears)
+    - [For Business](https://www.logitech.com/business.html)
+- [Software](/en-us/software)
+- [Deals](/en-us/shop/deals)
+- [Planet](/en-us/planet-and-people/everything-matters)
+
+---
+
+- [Search](#)
+- [Account](#)
+- [Cart](/en-us/cart)

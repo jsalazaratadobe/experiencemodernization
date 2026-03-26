@@ -1,0 +1,38 @@
+{
+  "variantName": "cards-quicklinks",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-03-24T19:27:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.logitech.com/en-us",
+    "originPage": "brand homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "quick-navigation",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "circular-image + label-link",
+    "buttonCount": 0,
+    "imageCount": 9
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "category quick links",
+      "navigation shortcuts",
+      "icon-based category browsing"
+    ],
+    "notSuitableFor": [
+      "detailed product cards",
+      "content-heavy cards with descriptions"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/en-us"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-24T19:27:00.000Z"
+  }
+}

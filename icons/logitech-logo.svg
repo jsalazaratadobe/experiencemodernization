@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 100" fill="#1b1b1b">
+  <!-- Logi circle icon -->
+  <circle cx="42" cy="50" r="38" fill="none" stroke="#1b1b1b" stroke-width="7"/>
+  <circle cx="42" cy="50" r="4" fill="#1b1b1b"/>
+  <!-- logitech text -->
+  <text x="95" y="68" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="400" letter-spacing="-1">logitech</text>
+</svg>
