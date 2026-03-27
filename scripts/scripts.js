@@ -120,14 +120,23 @@ function decorateSustainabilitySection(main) {
   section.textContent = '';
   section.append(header, grid);
 
-  // Add "Shop by product category" heading before the cards-thumbnail block
+  // Move "Shop by product category" out of the dark section into its own section
   const darkSection = section.closest('.section.dark');
   const thumbWrapper = darkSection ? darkSection.querySelector('.cards-thumbnail-wrapper') : null;
   if (thumbWrapper) {
+    const productSection = document.createElement('div');
+    productSection.className = 'section product-category-section';
+
+    const headingWrapper = document.createElement('div');
+    headingWrapper.className = 'default-content-wrapper';
     const heading = document.createElement('h2');
-    heading.className = 'product-category-heading';
+    heading.id = 'shop-by-product-category';
     heading.textContent = 'Shop by product category';
-    thumbWrapper.before(heading);
+    headingWrapper.append(heading);
+
+    productSection.append(headingWrapper, thumbWrapper);
+    productSection.dataset.sectionStatus = 'initialized';
+    darkSection.after(productSection);
   }
 }
 
