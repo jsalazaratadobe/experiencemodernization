@@ -92,12 +92,12 @@ body.appear {
 }
 
 header {
-  height: calc(var(--nav-height) + 4px);
+  height: var(--nav-height);
 }
 
 @media (width >= 900px) {
   header {
-    height: calc(var(--nav-height) + 44px);
+    height: calc(var(--nav-height) + 40px);
   }
 }
 

@@ -2,6 +2,7 @@ import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 
 const isDesktop = window.matchMedia('(min-width: 900px)');
+let megaMenuHoverTimeout;
 
 const CATEGORY_IMAGES = {
   Mice: 'https://resource.logitech.com/w_115,h_115,ar_1,c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/navigation/logi/logi-nav/logitech-navigation-mice-mx-master-4.png',
@@ -76,6 +77,21 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
   document.body.style.overflowY = (expanded || isDesktop.matches) ? '' : 'hidden';
   nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
   button.setAttribute('aria-label', expanded ? 'Open navigation' : 'Close navigation');
+
+  // Toggle mobile overlay backdrop
+  let overlay = nav.closest('.nav-wrapper')?.querySelector('.nav-overlay');
+  if (!expanded && !isDesktop.matches) {
+    if (!overlay) {
+      overlay = document.createElement('div');
+      overlay.className = 'nav-overlay';
+      overlay.addEventListener('click', () => toggleMenu(nav, navSections));
+      nav.closest('.nav-wrapper').append(overlay);
+    }
+    overlay.classList.add('visible');
+  } else if (overlay) {
+    overlay.classList.remove('visible');
+  }
+
   if (!expanded || isDesktop.matches) {
     window.addEventListener('keydown', closeOnEscape);
   } else {
@@ -418,6 +434,7 @@ export default async function decorate(block) {
         shopBtn.setAttribute('aria-haspopup', 'true');
         item.append(shopBtn);
 
+        // Click to toggle on mobile
         shopBtn.addEventListener('click', (e) => {
           e.stopPropagation();
           if (!isDesktop.matches) {
@@ -460,14 +477,42 @@ export default async function decorate(block) {
   // Build utility bar
   const utilityBar = buildUtilityBar();
 
-  // Hamburger for mobile
+  // Hamburger for mobile (placed on right side)
   const hamburger = document.createElement('div');
   hamburger.classList.add('nav-hamburger');
   hamburger.innerHTML = `<button type="button" aria-controls="nav" aria-label="Open navigation">
       <span class="nav-hamburger-icon"></span>
     </button>`;
   hamburger.addEventListener('click', () => toggleMenu(nav, navSections));
-  nav.prepend(hamburger);
+  nav.append(hamburger);
+
+  // Add mobile-only footer content to nav-sections
+  if (navSections) {
+    const mobileFooter = document.createElement('div');
+    mobileFooter.className = 'nav-mobile-footer';
+    mobileFooter.innerHTML = `
+      <div class="nav-mobile-divider"></div>
+      <ul class="nav-mobile-links">
+        <li><a href="https://www.logitechg.com/en-us">Logitech G</a></li>
+        <li><a href="/en-us/business.html">Business</a></li>
+        <li><a href="/en-us/education.html">Education</a></li>
+        <li><a href="/en-us/shop/outlet">Outlet</a></li>
+        <li><a href="https://support.logi.com/hc/en-us">Support</a></li>
+      </ul>
+      <div class="nav-mobile-bottom">
+        <a href="/en-us/change-location" class="nav-mobile-locale">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span>US,EN</span>
+        </a>
+        <a href="#" class="nav-mobile-wishlist">
+          ${TOOL_ICONS.Wishlist}
+          <span>Wishlist</span>
+        </a>
+      </div>
+    `;
+    navSections.append(mobileFooter);
+  }
+
   nav.setAttribute('aria-expanded', 'false');
   toggleMenu(nav, navSections, isDesktop.matches);
   isDesktop.addEventListener('change', () => {
@@ -479,6 +524,16 @@ export default async function decorate(block) {
   if (megaMenu) {
     nav.append(megaMenu);
     megaMenu.querySelector('.mega-menu-close').addEventListener('click', () => closeMegaMenu(nav));
+
+    // Keep mega menu open when cursor moves into it
+    megaMenu.addEventListener('mouseenter', () => {
+      clearTimeout(megaMenuHoverTimeout);
+    });
+    megaMenu.addEventListener('mouseleave', () => {
+      if (isDesktop.matches) {
+        megaMenuHoverTimeout = setTimeout(() => closeMegaMenu(nav), 200);
+      }
+    });
   }
 
   // Build final structure
