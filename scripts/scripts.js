@@ -45,6 +45,93 @@ async function loadFonts() {
 }
 
 /**
+ * Restructures the sustainability section's default-content-wrapper
+ * so the 3 sub-cards (heading + image pairs) become image cards
+ * with overlaid titles in a horizontal grid.
+ * @param {Element} main The container element
+ */
+function decorateSustainabilitySection(main) {
+  const section = main.querySelector('.section.dark .default-content-wrapper');
+  if (!section) return;
+
+  const sustainH2 = section.querySelector('#everything-matters');
+  if (!sustainH2) return;
+
+  // Collect the 3 sub-card pairs: each is an h2 (with link) followed by a p (with picture)
+  const cardIds = ['labels-matters', 'doing-better-matters', 'working-together-matters'];
+  const cards = [];
+  cardIds.forEach((id) => {
+    const heading = section.querySelector(`#${id}`);
+    if (!heading) return;
+    const imgP = heading.nextElementSibling;
+    cards.push({ heading, imgP });
+  });
+
+  if (cards.length === 0) return;
+
+  // Wrap the top content (before first card heading) in a header div
+  const header = document.createElement('div');
+  header.className = 'sustainability-header';
+  const topH2 = section.querySelector('#design-for-sustainability');
+
+  // Save reference to the sibling chain before moving elements
+  const cardIdSet = new Set(cardIds);
+  let next = sustainH2.nextElementSibling;
+
+  if (topH2) header.append(topH2);
+  header.append(sustainH2);
+
+  // Grab description and CTA that follow "Everything matters"
+  while (next && !cardIdSet.has(next.id)) {
+    const toMove = next;
+    next = next.nextElementSibling;
+    header.append(toMove);
+  }
+
+  // Build cards grid
+  const grid = document.createElement('div');
+  grid.className = 'sustainability-cards';
+
+  cards.forEach(({ heading, imgP }) => {
+    const card = document.createElement('a');
+    const link = heading.querySelector('a');
+    card.href = link ? link.href : '/';
+    card.className = 'sustainability-card';
+    card.setAttribute('aria-label', heading.textContent.trim());
+
+    // Move the image into the card (may be <picture> or bare <img>)
+    const pic = imgP ? (imgP.querySelector('picture') || imgP.querySelector('img')) : null;
+    if (pic) card.append(pic);
+
+    // Create overlay title
+    const title = document.createElement('div');
+    title.className = 'sustainability-card-title';
+    title.textContent = heading.textContent.trim();
+    card.append(title);
+
+    grid.append(card);
+
+    // Remove originals from DOM
+    heading.remove();
+    if (imgP) imgP.remove();
+  });
+
+  // Replace default-content-wrapper contents
+  section.textContent = '';
+  section.append(header, grid);
+
+  // Add "Shop by product category" heading before the cards-thumbnail block
+  const darkSection = section.closest('.section.dark');
+  const thumbWrapper = darkSection ? darkSection.querySelector('.cards-thumbnail-wrapper') : null;
+  if (thumbWrapper) {
+    const heading = document.createElement('h2');
+    heading.className = 'product-category-heading';
+    heading.textContent = 'Shop by product category';
+    thumbWrapper.before(heading);
+  }
+}
+
+/**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
@@ -90,6 +177,25 @@ export function moveInstrumentation(source, target) {
 }
 
 /**
+ * Removes tracking pixels and "Chat with us" junk content that creates
+ * empty space before the footer.
+ * @param {Element} main The container element
+ */
+function removeTrackingJunk(main) {
+  main.querySelectorAll('.default-content-wrapper').forEach((wrapper) => {
+    const imgs = wrapper.querySelectorAll('img');
+    const isJunk = [...imgs].some((img) => {
+      const src = img.getAttribute('src') || '';
+      return src.includes('bizible.com')
+        || src.includes('bizibly.com')
+        || src.includes('zoominfo.com')
+        || src.includes('yellowmessenger.com');
+    });
+    if (isJunk) wrapper.remove();
+  });
+}
+
+/**
  * Decorates the main element.
  * @param {Element} main The main element
  */
@@ -101,6 +207,8 @@ export function decorateMain(main) {
   buildAutoBlocks(main);
   decorateSections(main);
   decorateBlocks(main);
+  decorateSustainabilitySection(main);
+  removeTrackingJunk(main);
 }
 
 /**

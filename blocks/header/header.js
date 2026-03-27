@@ -83,22 +83,139 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
   }
 }
 
+const PROMO_OFFERS = [
+  {
+    title: 'FREE Tablet Stand with Keys-To-Go 2',
+    description: 'Get a free tablet stand when you purchase a Keys-To-Go 2 wireless keyboard.',
+    fine: '*While supplies last. Limit one per customer.',
+    cta: 'Shop Now',
+    href: '/en-us/shop/p/keys-to-go-2',
+  },
+  {
+    title: 'Save up to $100 when you bundle MX Master 4*',
+    description: 'Save up to $100 when you bundle the MX Master 4 with select workspace products.',
+    fine: '*Offer is automatically applied in cart.',
+    cta: 'Shop Now',
+    href: '/en-us/campaigns/mx-master-4-product-ecosystem',
+  },
+  {
+    title: '20% OFF for Students & Heroes',
+    description: 'Students and Heroes can benefit from a 20% discount on Logitech products.',
+    fine: '',
+    cta: 'Get Verified',
+    href: '/en-us/programs/sheer-id',
+  },
+  {
+    title: 'Buy now, pay later with Klarna',
+    description: 'Pay at your own pace with Klarna payment plans. Get what you love, choose how you pay.',
+    fine: '',
+    cta: 'Learn More',
+    href: '/en-us/promo/klarna',
+  },
+];
+
+const OUTLET_TAG_SVG = '<svg class="outlet-tag-icon" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="m.295 4.79 4.5-4.5c.18-.18.43-.29.705-.29H9c.55 0 1 .45 1 1v3.5c0 .275-.11.525-.295.71l-4.5 4.5a.994.994 0 01-1.41-.005l-3.5-3.5A.978.978 0 010 5.5c0-.275.115-.53.295-.71ZM8.25 2.5a.749.749 0 100-1.5.749.749 0 100 1.5Z"/></svg>';
+
+const CHEVRON_SVG = '<svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
 function buildUtilityBar() {
   const utility = document.createElement('div');
   utility.className = 'nav-utility';
-  utility.innerHTML = `
-    <div class="nav-utility-promo">
-      <span>20% OFF for Students &amp; Heroes</span>
-    </div>
-    <div class="nav-utility-links">
-      <a href="https://www.logitechg.com/en-us">Logitech G</a>
-      <a href="/en-us/business.html">Business</a>
-      <a href="/en-us/education.html">Education</a>
-      <a href="/en-us/shop/outlet">Outlet</a>
-      <a href="https://support.logi.com/hc/en-us">Support</a>
-      <span class="nav-locale">US, en</span>
-    </div>
+
+  // Promo toggle area
+  const promoToggle = document.createElement('button');
+  promoToggle.className = 'nav-utility-promo-toggle';
+  promoToggle.setAttribute('aria-expanded', 'false');
+
+  const chevron = document.createElement('span');
+  chevron.className = 'nav-utility-chevron';
+  chevron.innerHTML = CHEVRON_SVG;
+
+  const promoText = document.createElement('span');
+  promoText.className = 'nav-utility-promo-text';
+  promoText.textContent = PROMO_OFFERS[0].title;
+
+  promoToggle.append(chevron, promoText);
+
+  // Rotate promo text
+  let promoIndex = 0;
+  setInterval(() => {
+    const expanded = promoToggle.getAttribute('aria-expanded') === 'true';
+    if (expanded) return;
+    promoIndex = (promoIndex + 1) % PROMO_OFFERS.length;
+    promoText.textContent = PROMO_OFFERS[promoIndex].title;
+  }, 4000);
+
+  // Utility links
+  const utilityLinks = document.createElement('div');
+  utilityLinks.className = 'nav-utility-links';
+  utilityLinks.innerHTML = `
+    <a href="https://www.logitechg.com/en-us">Logitech G</a>
+    <a href="/en-us/business.html">Business</a>
+    <a href="/en-us/education.html">Education</a>
+    <span class="nav-outlet-link">${OUTLET_TAG_SVG}<a href="/en-us/shop/outlet">Outlet</a></span>
+    <a href="https://support.logi.com/hc/en-us">Support</a>
+    <span class="nav-locale"><img src="/icons/globe.svg" alt="" width="13" height="13">US,EN</span>
   `;
+
+  // Offers panel
+  const offersPanel = document.createElement('div');
+  offersPanel.className = 'nav-offers-panel';
+  offersPanel.setAttribute('aria-hidden', 'true');
+
+  const offersInner = document.createElement('div');
+  offersInner.className = 'nav-offers-inner';
+
+  const closeBtn = document.createElement('button');
+  closeBtn.className = 'nav-offers-close';
+  closeBtn.setAttribute('aria-label', 'Close offers');
+  closeBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
+
+  const offersGrid = document.createElement('div');
+  offersGrid.className = 'nav-offers-grid';
+
+  const arrowSvg = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+  PROMO_OFFERS.forEach((offer) => {
+    const card = document.createElement('a');
+    card.href = offer.href;
+    card.className = 'nav-offer-card';
+    card.innerHTML = `
+      <div class="nav-offer-card-body">
+        <h6 class="nav-offer-card-title">${offer.title}</h6>
+        <p class="nav-offer-card-desc">${offer.description}</p>
+        ${offer.fine ? `<p class="nav-offer-card-fine">${offer.fine}</p>` : ''}
+      </div>
+      <span class="nav-offer-card-cta">${offer.cta} ${arrowSvg}</span>
+    `;
+    offersGrid.append(card);
+  });
+
+  const truckSvg = '<svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 1H1v10h12V1Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M13 5h3l3 3v3h-6V5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="4.5" cy="13.5" r="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="15.5" cy="13.5" r="1.5" stroke="currentColor" stroke-width="1.5"/></svg>';
+
+  const shippingBanner = document.createElement('div');
+  shippingBanner.className = 'nav-offers-shipping';
+  shippingBanner.innerHTML = `${truckSvg}<span>Free Standard Shipping on Orders Over $29</span>`;
+
+  offersInner.append(closeBtn, offersGrid, shippingBanner);
+  offersPanel.append(offersInner);
+
+  // Toggle logic
+  function toggleOffers() {
+    const expanded = promoToggle.getAttribute('aria-expanded') === 'true';
+    promoToggle.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+    offersPanel.setAttribute('aria-hidden', expanded ? 'true' : 'false');
+    if (expanded) {
+      promoText.textContent = PROMO_OFFERS[promoIndex].title;
+    } else {
+      promoText.textContent = 'Close Offers';
+    }
+  }
+
+  promoToggle.addEventListener('click', toggleOffers);
+  closeBtn.addEventListener('click', toggleOffers);
+
+  utility.append(promoToggle, utilityLinks, offersPanel);
   return utility;
 }
 
@@ -244,22 +361,29 @@ export default async function decorate(block) {
     if (section) section.classList.add(`nav-${c}`);
   });
 
-  // Strip button classes from brand and add logo image
+  // Strip button classes from brand and add animated sprite logo
   const navBrand = nav.querySelector('.nav-brand');
   if (navBrand) {
     const brandLink = navBrand.querySelector('.button') || navBrand.querySelector('a');
     if (brandLink) {
-      brandLink.className = '';
+      brandLink.className = 'nav-brand-logo';
+      brandLink.setAttribute('aria-label', 'Logitech');
       const bc = brandLink.closest('.button-container');
       if (bc) bc.className = '';
-      const logoImg = document.createElement('img');
-      logoImg.src = '/icons/logitech-logo.svg';
-      logoImg.alt = 'Logitech';
-      logoImg.width = 110;
-      logoImg.height = 24;
-      logoImg.loading = 'eager';
       brandLink.textContent = '';
-      brandLink.append(logoImg);
+
+      // Sprite animation: play on load, replay on hover
+      brandLink.classList.add('play');
+      brandLink.addEventListener('animationend', () => {
+        brandLink.classList.remove('play');
+        brandLink.classList.add('stopped');
+      });
+      brandLink.addEventListener('mouseenter', () => {
+        brandLink.classList.remove('stopped');
+        // Force reflow to restart animation
+        brandLink.offsetWidth; // eslint-disable-line no-unused-expressions
+        brandLink.classList.add('play');
+      });
     }
   }
 
@@ -296,7 +420,34 @@ export default async function decorate(block) {
 
         shopBtn.addEventListener('click', (e) => {
           e.stopPropagation();
-          toggleMegaMenu(nav);
+          if (!isDesktop.matches) {
+            toggleMegaMenu(nav);
+          }
+        });
+
+        // Hover to open on desktop
+        let megaMenuHoverTimeout;
+        item.addEventListener('mouseenter', () => {
+          if (isDesktop.matches) {
+            clearTimeout(megaMenuHoverTimeout);
+            openMegaMenu(nav);
+          }
+        });
+        item.addEventListener('mouseleave', () => {
+          if (isDesktop.matches) {
+            megaMenuHoverTimeout = setTimeout(() => closeMegaMenu(nav), 200);
+          }
+        });
+
+        // Keep mega menu open while hovering over it
+        nav.addEventListener('mouseenter', () => {
+          const mm = nav.querySelector('.mega-menu[aria-hidden="false"]');
+          if (mm && isDesktop.matches) clearTimeout(megaMenuHoverTimeout);
+        });
+        nav.addEventListener('mouseleave', () => {
+          if (isDesktop.matches) {
+            megaMenuHoverTimeout = setTimeout(() => closeMegaMenu(nav), 200);
+          }
         });
       }
     });

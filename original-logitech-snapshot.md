@@ -1,0 +1,471 @@
+### New console messages
+- [LOG] Wait Locale execution time: 36.00ms @ https://www.logitech.com/_app/immutable/nodes/0.BGMn9aVm...
+- [WARNING] Image component used with width="auto" must specify height. @ https://www.logitech.com/_ap...
+- [WARNING] Image component used with width="auto" must specify height. @ https://www.logitech.com/_ap...
+- [WARNING] Image component used with width="auto" must specify height. @ https://www.logitech.com/_ap...
+- [WARNING] Image component used with width="auto" must specify height. @ https://www.logitech.com/_ap...
+- [LOG] New consent settings, old, new:  [] [C0001, C0002, C0003, C0004] @ https://www.logitech.com/_a...
+- [LOG] {bot: x1718901280002, host: https://r4.cloud.yellow.ai, theme: Object, payload: Object} @ http...
+- [WARNING] [Meta Pixel] - Duplicate Pixel ID: 1100401236706364. @ https://cdn.quantummetric.com/qscri...
+- [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://ww...
+- [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://ww...
+- [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://ww...
+
+### Page state
+- Page URL: https://www.logitech.com/en-us
+- Page Title: Logitech United States
+- Page Snapshot:
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - link "SKIP TO MAIN CONTENT" [ref=e5] [cursor=pointer]:
+      - /url: "#main-content"
+    - banner [ref=e7]:
+      - generic [ref=e9]:
+        - button "Save up to $100 when you bundle MX Master 4*" [ref=e566] [cursor=pointer]:
+          - img [ref=e568]
+          - generic [ref=e570]: Save up to $100 when you bundle MX Master 4*
+        - generic [ref=e11]:
+          - list [ref=e12]:
+            - listitem [ref=e13]:
+              - link "Logitech G" [ref=e14] [cursor=pointer]:
+                - /url: https://www.logitechg.com/en-us
+            - listitem [ref=e15]:
+              - link "Business" [ref=e16] [cursor=pointer]:
+                - /url: /en-us/business.html
+            - listitem [ref=e17]:
+              - link "Education" [ref=e18] [cursor=pointer]:
+                - /url: /en-us/education.html
+            - listitem [ref=e19]:
+              - img [ref=e20]
+              - link "Outlet" [ref=e22] [cursor=pointer]:
+                - /url: /en-us/shop/outlet
+          - generic [ref=e23]:
+            - link "Support" [ref=e24] [cursor=pointer]:
+              - /url: https://support.logi.com/hc/en-us
+            - generic [ref=e25]:
+              - img [ref=e27]
+              - link "Locale Selector - US,en" [ref=e29] [cursor=pointer]:
+                - /url: /en-us/change-location
+                - text: US,en
+      - navigation [ref=e33]:
+        - generic [ref=e34]:
+          - link "Logitech" [ref=e36] [cursor=pointer]:
+            - /url: /en-us
+          - generic [ref=e37]:
+            - button "Shop" [ref=e38] [cursor=pointer]
+            - link "Shop" [ref=e39] [cursor=pointer]:
+              - /url: /en-us/shop
+          - link "Software" [ref=e41] [cursor=pointer]:
+            - /url: /en-us/software
+          - link "Deals" [ref=e43] [cursor=pointer]:
+            - /url: /en-us/shop/deals
+          - link "Planet" [ref=e45] [cursor=pointer]:
+            - /url: /en-us/planet-and-people/everything-matters
+        - generic [ref=e46]:
+          - button "Search" [ref=e47] [cursor=pointer]:
+            - img "Search" [ref=e48]
+          - button "Wishlist" [ref=e50] [cursor=pointer]:
+            - img "Wishlist" [ref=e51]
+          - generic [ref=e52]:
+            - button "My Account" [ref=e54] [cursor=pointer]:
+              - img "My Account" [ref=e55]
+            - link "View Cart" [ref=e56] [cursor=pointer]:
+              - /url: /en-us/cart
+              - img "View Cart" [ref=e57]
+    - main [ref=e58]:
+      - generic [ref=e63]:
+        - heading "Combo Touch for iPad Air" [level=2] [ref=e64]
+        - heading "Pair it with the new iPad Air (M4)" [level=1] [ref=e65]
+        - generic [ref=e70]:
+          - generic [ref=e71]:
+            - generic [ref=e72]: $169.99
+            - text: "-"
+            - generic [ref=e73]: $189.99
+          - generic [ref=e74]:
+            - generic [ref=e75]: $199.99
+            - text: "-"
+            - generic [ref=e76]: $229.99
+        - link "Buy now Combo Touch for iPad Air" [ref=e78] [cursor=pointer]:
+          - /url: /en-us/shop/p/combo-touch-ipad-air
+          - text: Buy now
+      - generic [ref=e82]:
+        - heading "Ritual Rescue" [level=2] [ref=e84]
+        - paragraph [ref=e86]: In celebration of International Wellness Month, we’re sharing how small, intentional rituals and the right desk setup can transform your workday wellbeing.
+        - link "Learn More about the International Wellbeing month offer" [ref=e88] [cursor=pointer]:
+          - /url: /en-us/campaigns/wellbeing-month
+          - text: WORK BETTER
+      - generic [ref=e92]:
+        - img [ref=e93]
+        - generic [ref=e97]:
+          - generic [ref=e98]:
+            - link "Card Image" [ref=e100] [cursor=pointer]:
+              - /url: /en-us/shop/deals
+              - img "Card Image" [ref=e102]
+            - heading "Shop Offers" [level=2] [ref=e103]
+            - paragraph [ref=e105]: Unlock exclusive deals on top rated Logitech products for creators, gamers, and professionals.
+            - link "Shop to unlock exclusive deals on top rated Logitech products" [ref=e107] [cursor=pointer]:
+              - /url: /en-us/shop/deals
+              - generic [ref=e108]: SHOP DEALS
+          - generic [ref=e109]:
+            - link "Card Image" [ref=e111] [cursor=pointer]:
+              - /url: /en-us/shop/p/alto-keys-k98m
+              - img "Card Image" [ref=e113]
+            - heading "Shop Alto Keys K98M" [level=2] [ref=e114]
+            - paragraph [ref=e116]: Meet our newest wireless mechanical keyboard, designed for next-level typing satisfaction.
+            - link "Shop the newest wireless mechanical keyboard K98m" [ref=e118] [cursor=pointer]:
+              - /url: /en-us/shop/p/alto-keys-k98m
+              - generic [ref=e119]: SHOP NOW
+          - generic [ref=e120]:
+            - link "Card Image" [ref=e122] [cursor=pointer]:
+              - /url: /en-us/campaigns/mx-master-4-product-ecosystem
+              - img "Card Image" [ref=e124]
+            - heading "Shop MX Master 4 & Save On Your Ultimate Setup" [level=2] [ref=e125]
+            - paragraph [ref=e127]: Save up to $100 when you bundle the MX Master 4 with select workspace products.
+            - link "Click on the link to shop now" [ref=e129] [cursor=pointer]:
+              - /url: /en-us/campaigns/mx-master-4-product-ecosystem
+              - generic [ref=e130]: SHOP NOW
+      - region "Discover our most popular product categories" [ref=e131]:
+        - generic [ref=e132]:
+          - heading "Discover our most popular product categories" [level=2] [ref=e133]:
+            - generic [ref=e134]: Discover our most popular product categories
+          - generic [ref=e137]:
+            - link "Keyboards" [ref=e138] [cursor=pointer]:
+              - /url: /en-us/discover/c/keyboards
+              - heading "Keyboards" [level=2] [ref=e140]:
+                - generic [ref=e141]: Keyboards
+            - link "Mice" [ref=e142] [cursor=pointer]:
+              - /url: /en-us/discover/c/mice
+              - heading "Mice" [level=2] [ref=e144]:
+                - generic [ref=e145]: Mice
+            - link "Webcams" [ref=e146] [cursor=pointer]:
+              - /url: /en-us/discover/c/webcams
+              - heading "Webcams" [level=2] [ref=e148]:
+                - generic [ref=e149]: Webcams
+      - generic [ref=e151]:
+        - generic [ref=e153]:
+          - heading "Design for sustainability" [level=2] [ref=e154]
+          - heading "Everything matters" [level=2] [ref=e155]
+          - paragraph [ref=e156]: When it comes to doing better for our planet, it’s on us. Every component. Every process. Every product.
+          - link "LEARN ABOUT OUR COMMITMENT" [ref=e157] [cursor=pointer]:
+            - /url: /en-us/planet-and-people/everything-matters
+        - generic [ref=e162]:
+          - generic "Labels matters" [ref=e163]:
+            - heading "Labels matters" [level=2] [ref=e165]:
+              - generic [ref=e166]: Labels matters
+          - generic "Doing better matters" [ref=e167]:
+            - heading "Doing better matters" [level=2] [ref=e169]:
+              - generic [ref=e170]: Doing better matters
+          - generic "Working together matters" [ref=e171]:
+            - heading "Working together matters" [level=2] [ref=e173]:
+              - generic [ref=e174]: Working together matters
+      - generic [ref=e176]:
+        - heading "Shop by product category" [level=2] [ref=e178]
+        - generic [ref=e181]:
+          - link "Keyboards and Consoles" [ref=e182] [cursor=pointer]:
+            - /url: /en-us/shop/c/keyboards
+            - paragraph [ref=e186]: Keyboards and Consoles
+          - link "Combos" [ref=e187] [cursor=pointer]:
+            - /url: /en-us/shop/c/combos
+            - paragraph [ref=e191]: Combos
+          - link "Mice" [ref=e192] [cursor=pointer]:
+            - /url: /en-us/shop/c/mice
+            - paragraph [ref=e196]: Mice
+          - link "Speakers" [ref=e197] [cursor=pointer]:
+            - /url: /en-us/shop/c/speakers
+            - paragraph [ref=e201]: Speakers
+          - link "Conference Cameras" [ref=e202] [cursor=pointer]:
+            - /url: /en-us/shop/c/conference-cameras
+            - paragraph [ref=e206]: Conference Cameras
+          - link "Driving" [ref=e207] [cursor=pointer]:
+            - /url: /en-us/shop/c/driving
+            - paragraph [ref=e211]: Driving
+          - link "Headsets" [ref=e212] [cursor=pointer]:
+            - /url: /en-us/shop/c/headsets
+            - paragraph [ref=e216]: Headsets
+          - link "Lighting" [ref=e217] [cursor=pointer]:
+            - /url: /en-us/shop/c/cameras-lighting
+            - paragraph [ref=e221]: Lighting
+          - link "Webcams" [ref=e222] [cursor=pointer]:
+            - /url: /en-us/shop/c/webcams
+            - paragraph [ref=e226]: Webcams
+          - link "Microphones" [ref=e227] [cursor=pointer]:
+            - /url: /en-us/shop/c/microphones
+            - paragraph [ref=e231]: Microphones
+          - link "iPad Keyboard Cases" [ref=e232] [cursor=pointer]:
+            - /url: /en-us/shop/c/ipad-keyboards
+            - paragraph [ref=e236]: iPad Keyboard Cases
+          - link "Refurbished Products" [ref=e237] [cursor=pointer]:
+            - /url: /en-us/shop/c/certified-refurb
+            - paragraph [ref=e241]: Refurbished Products
+      - region "Shop by interest" [ref=e242]:
+        - generic [ref=e243]:
+          - heading "Shop by interest" [level=2] [ref=e244]:
+            - generic [ref=e245]: Shop by interest
+          - generic [ref=e248]:
+            - link "Business" [ref=e249] [cursor=pointer]:
+              - /url: /en-us/business
+              - heading "Business" [level=2] [ref=e251]:
+                - generic [ref=e252]: Business
+            - link "Gaming" [ref=e253] [cursor=pointer]:
+              - /url: https://www.logitechg.com/en-us
+              - heading "Gaming" [level=2] [ref=e255]:
+                - generic [ref=e256]: Gaming
+            - link "Education" [ref=e257] [cursor=pointer]:
+              - /url: /en-us/education
+              - heading "Education" [level=2] [ref=e259]:
+                - generic [ref=e260]: Education
+      - generic [ref=e263]:
+        - generic [ref=e264]:
+          - heading "Reasons to buy from Logitech.com" [level=2] [ref=e265]
+          - paragraph [ref=e266]: We're all about making your shopping experience seamless. Shop direct and enjoy perks like free shipping, multiple payment options, easy returns, and access to exclusive offers only on logitech.com.
+        - generic [ref=e267]:
+          - generic [ref=e268]:
+            - img "Buy now, pay later"
+            - heading "Buy now, pay later" [level=3] [ref=e269]
+            - paragraph [ref=e271]: Pay at your own pace with Klarna payment plans. Get what you love, choose how you pay.
+          - generic [ref=e272]:
+            - img "Free shipping"
+            - heading "Free shipping" [level=3] [ref=e273]
+            - paragraph [ref=e275]: Enjoy free standard shipping on all orders over $29.
+          - generic [ref=e276]:
+            - img "Students and Heroes get 20% Off"
+            - heading "Students and Heroes get 20% Off" [level=3] [ref=e277]
+            - paragraph [ref=e279]: Students and Heroes can benefit from a 20% discount on Logitech products. It couldn’t be easier.
+            - link "Click here to verify the status" [ref=e280] [cursor=pointer]:
+              - /url: /en-us/programs/sheer-id
+              - generic [ref=e281]: GET VERIFIED
+          - generic [ref=e282]:
+            - img "Money-back guarantee"
+            - heading "Money-back guarantee" [level=3] [ref=e283]
+            - generic [ref=e284]: Shop risk-free with our easy returns and 30-day money back guarantee.
+          - generic [ref=e285]:
+            - img "24/7 customer service"
+            - heading "24/7 customer service" [level=3] [ref=e286]
+            - generic [ref=e287]: We're here for you whenever you need. Reach us via chat, phone, or email for your convenience.
+          - generic [ref=e288]:
+            - img "Exclusive offers"
+            - heading "Exclusive offers" [level=3] [ref=e289]
+            - generic [ref=e290]: Unlock exclusive gifts when you purchase select products. Sign up for emails to stay up-to-date on offers.
+    - contentinfo [ref=e390]:
+      - generic [ref=e391]:
+        - generic [ref=e392]:
+          - generic [ref=e394]:
+            - heading "Legal Trademark Statement" [level=5] [ref=e395]
+            - paragraph [ref=e396]:
+              - text: Logitech, Logi, their logos, and all other Logitech trademarks are trademarks or registered trademarks of Logitech Europe S.A. and/or its affiliates in the U.S. and other countries. All other third party trademarks are the property of their respective owners.
+              - link "See all trademarks" [ref=e397] [cursor=pointer]:
+                - /url: https://www.logitech.com/en-us/tos/trademark-guidelines.html
+          - generic [ref=e398]:
+            - link "Logitech":
+              - /url: /en-us
+              - generic [ref=e399] [cursor=pointer]: Logitech
+          - img [ref=e400]
+          - generic [ref=e404]:
+            - generic [ref=e405]:
+              - link "Logitech" [ref=e407] [cursor=pointer]:
+                - /url: /en-us
+                - generic [ref=e408]: Logitech
+                - img [ref=e410]
+              - generic [ref=e413]:
+                - img [ref=e415]
+                - link "Locale Selector - US,en" [ref=e417] [cursor=pointer]:
+                  - /url: /en-us/change-location
+                  - text: US,en
+              - generic [ref=e418]:
+                - link "instagram-test" [ref=e419] [cursor=pointer]:
+                  - /url: http://instagram.com/logitech?ref=badge
+                  - img "instagram-test" [ref=e420]
+                - link "twitter" [ref=e421] [cursor=pointer]:
+                  - /url: http://www.twitter.com/Logitech
+                  - img "twitter" [ref=e422]
+                - link "facebook" [ref=e423] [cursor=pointer]:
+                  - /url: http://www.facebook.com/Logitech
+                  - img "facebook" [ref=e424]
+            - generic [ref=e425]:
+              - generic [ref=e426]:
+                - generic [ref=e427]:
+                  - heading "Logitech" [level=2] [ref=e428]
+                  - list [ref=e429]:
+                    - listitem [ref=e430]:
+                      - link "Our Story" [ref=e431] [cursor=pointer]:
+                        - /url: /en-us/about
+                    - listitem [ref=e432]:
+                      - link "Careers" [ref=e433] [cursor=pointer]:
+                        - /url: /en-us/careers
+                    - listitem [ref=e434]:
+                      - link "Investors" [ref=e435] [cursor=pointer]:
+                        - /url: https://ir.logitech.com/
+                    - listitem [ref=e436]:
+                      - link "Learning Center" [ref=e437] [cursor=pointer]:
+                        - /url: /en-us/discover/learning-center
+                    - listitem [ref=e438]:
+                      - link "Blog" [ref=e439] [cursor=pointer]:
+                        - /url: https://blog.logitech.com/
+                    - listitem [ref=e440]:
+                      - link "Press" [ref=e441] [cursor=pointer]:
+                        - /url: https://news.logitech.com/
+                    - listitem [ref=e442]:
+                      - link "Sustainability" [ref=e443] [cursor=pointer]:
+                        - /url: /en-us/sustainability
+                    - listitem [ref=e444]:
+                      - link "Recycling" [ref=e445] [cursor=pointer]:
+                        - /url: /en-us/sustainability/recycling
+                    - listitem [ref=e446]:
+                      - link "Accessibility" [ref=e447] [cursor=pointer]:
+                        - /url: /en-us/accessibility
+                - generic [ref=e448]:
+                  - heading "Shop products" [level=2] [ref=e449]
+                  - list [ref=e450]:
+                    - listitem [ref=e451]:
+                      - link "Mice" [ref=e452] [cursor=pointer]:
+                        - /url: /en-us/shop/c/mice
+                    - listitem [ref=e453]:
+                      - link "Keyboards" [ref=e454] [cursor=pointer]:
+                        - /url: /en-us/shop/c/keyboards
+                    - listitem [ref=e455]:
+                      - link "Headsets & Earbuds" [ref=e456] [cursor=pointer]:
+                        - /url: /en-us/shop/c/headsets
+                    - listitem [ref=e457]:
+                      - link "Webcams" [ref=e458] [cursor=pointer]:
+                        - /url: /en-us/shop/c/webcams
+                    - listitem [ref=e459]:
+                      - link "Speakers" [ref=e460] [cursor=pointer]:
+                        - /url: /en-us/shop/c/speakers
+                    - listitem [ref=e461]:
+                      - link "iPad Keyboard Cases" [ref=e462] [cursor=pointer]:
+                        - /url: /en-us/shop/c/ipad-keyboards
+                    - listitem [ref=e463]:
+                      - link "Gaming Mice" [ref=e464] [cursor=pointer]:
+                        - /url: /en-us/shop/c/gaming-mice
+                    - listitem [ref=e465]:
+                      - link "Gaming Keyboards" [ref=e466] [cursor=pointer]:
+                        - /url: /en-us/shop/c/gaming-keyboards
+                    - listitem [ref=e467]:
+                      - link "Gaming Headsets" [ref=e468] [cursor=pointer]:
+                        - /url: /en-us/shop/c/gaming-audio
+                    - listitem [ref=e469]:
+                      - link "Microphones" [ref=e470] [cursor=pointer]:
+                        - /url: /en-us/shop/c/microphones
+                - generic [ref=e471]:
+                  - heading "For Productivity" [level=2] [ref=e472]
+                  - list [ref=e473]:
+                    - listitem [ref=e474]:
+                      - link "Master Series" [ref=e475] [cursor=pointer]:
+                        - /url: /en-us/mx/master-series
+                    - listitem [ref=e476]:
+                      - link "Ergo Series" [ref=e477] [cursor=pointer]:
+                        - /url: /en-us/ergo/ergo-series
+                - generic [ref=e478]:
+                  - heading "For Gaming and Streaming" [level=2] [ref=e479]
+                  - list [ref=e480]:
+                    - listitem [ref=e481]:
+                      - link "Astro Gaming" [ref=e482] [cursor=pointer]:
+                        - /url: https://www.logitechg.com/en-us/collections/astro-series.html
+                    - listitem [ref=e483]:
+                      - link "Pro Gaming" [ref=e484] [cursor=pointer]:
+                        - /url: https://www.logitechg.com/en-us/products/pro.html
+                    - listitem [ref=e485]:
+                      - link "SIM Racing" [ref=e486] [cursor=pointer]:
+                        - /url: https://www.logitechg.com/en-us/pro-racing.html
+                    - listitem [ref=e487]:
+                      - link "Streaming Gear" [ref=e488] [cursor=pointer]:
+                        - /url: https://www.logitechg.com/en-us/collections/streaming-gear-software.html
+                - generic [ref=e489]:
+                  - heading "For Business" [level=2] [ref=e490]
+                  - list [ref=e491]:
+                    - listitem [ref=e492]:
+                      - link "Shop Spaces" [ref=e493] [cursor=pointer]:
+                        - /url: /en-us/business
+                    - listitem [ref=e494]:
+                      - link "Shop Business Products" [ref=e495] [cursor=pointer]:
+                        - /url: /en-us/business/products
+                    - listitem [ref=e496]:
+                      - link "Software & Services" [ref=e497] [cursor=pointer]:
+                        - /url: /en-us/video-collaboration/services-and-software
+                    - listitem [ref=e498]:
+                      - link "Partners" [ref=e499] [cursor=pointer]:
+                        - /url: /en-us/business/partner-program
+                    - listitem [ref=e500]:
+                      - link "Alliance Partners" [ref=e501] [cursor=pointer]:
+                        - /url: /en-us/business/partners
+                    - listitem [ref=e502]:
+                      - link "Business Resources" [ref=e503] [cursor=pointer]:
+                        - /url: /en-us/business/resource-center
+                - generic [ref=e504]:
+                  - heading "For Education" [level=2] [ref=e505]
+                  - list [ref=e506]:
+                    - listitem [ref=e507]:
+                      - link "Shop Education Products" [ref=e508] [cursor=pointer]:
+                        - /url: /en-us/products/education
+                    - listitem [ref=e509]:
+                      - link "K-12 Solutions" [ref=e510] [cursor=pointer]:
+                        - /url: /en-us/education/k12
+                    - listitem [ref=e511]:
+                      - link "Education Resources" [ref=e512] [cursor=pointer]:
+                        - /url: /en-us/education/education-center
+                    - listitem [ref=e513]:
+                      - link "Student Discount" [ref=e514] [cursor=pointer]:
+                        - /url: /en-us/programs/sheer-id
+                - generic [ref=e515]:
+                  - heading "Support" [level=2] [ref=e516]
+                  - list [ref=e517]:
+                    - listitem [ref=e518]:
+                      - link "Individual Support" [ref=e519] [cursor=pointer]:
+                        - /url: https://support.logitech.com/support
+                    - listitem [ref=e520]:
+                      - link "Gaming Support" [ref=e521] [cursor=pointer]:
+                        - /url: https://support.logi.com/hc/en-us/categories/360001764393-Gaming
+                    - listitem [ref=e522]:
+                      - link "Business & Education Support" [ref=e523] [cursor=pointer]:
+                        - /url: https://prosupport.logi.com/hc/
+                    - listitem [ref=e524]:
+                      - link "Contact us" [ref=e525] [cursor=pointer]:
+                        - /url: http://support.logitech.com/contact
+                    - listitem [ref=e526]:
+                      - link "Spare Parts" [ref=e527] [cursor=pointer]:
+                        - /url: /en-us/shop/spare-parts-store
+                - generic [ref=e528]:
+                  - heading "Software" [level=2] [ref=e529]
+                  - list [ref=e530]:
+                    - listitem [ref=e531]:
+                      - link "GHub for Gaming & Streaming" [ref=e532] [cursor=pointer]:
+                        - /url: https://www.logitechg.com/en-us/innovation/g-hub.html
+                    - listitem [ref=e533]:
+                      - link "Options+ for Performance" [ref=e534] [cursor=pointer]:
+                        - /url: /en-us/software/logi-options-plus
+              - generic [ref=e537]:
+                - paragraph [ref=e538]: Sign up now to unlock a welcome offer, plus access to subscriber exclusives.
+                - generic [ref=e539]:
+                  - generic [ref=e540]:
+                    - textbox "Sign up for email newsletter" [ref=e541]
+                    - button "Subscribe" [ref=e542] [cursor=pointer]:
+                      - img [ref=e543]
+                  - generic [ref=e546]:
+                    - checkbox "I want personalized marketing from Logitech. You can unsubscribe anytime. See our Privacy Policy." [ref=e547]
+                    - img [ref=e549] [cursor=pointer]
+                    - generic [ref=e552]:
+                      - text: I want personalized marketing from Logitech. You can unsubscribe anytime. See our
+                      - link "Privacy Policy." [ref=e553] [cursor=pointer]:
+                        - /url: https://www.logitech.com/en-us/legal/privacy-policy
+              - generic [ref=e554]:
+                - generic [ref=e555]: ©2026 Logitech. All rights reserved
+                - generic [ref=e556]:
+                  - link "Terms of Use" [ref=e558] [cursor=pointer]:
+                    - /url: /en-us/tos/terms
+                  - link "Logitech Privacy Policy" [ref=e560] [cursor=pointer]:
+                    - /url: /en-us/legal/privacy-policy
+                    - text: Privacy Policy
+                  - button "Cookie Settings" [ref=e571] [cursor=pointer]
+                  - link "Sitemap" [ref=e564] [cursor=pointer]:
+                    - /url: /en-us/sitemap
+              - generic [ref=e572]:
+                - generic [ref=e573]: "Support ID:"
+                - generic [ref=e574]: 2e53feb91eef02af
+                - button "info-support-id" [ref=e576] [cursor=pointer]:
+                  - img [ref=e577]
+        - paragraph [ref=e565]
+  - region "Cookies Consent"
+  - button "Logitech Assistant button" [ref=e580] [cursor=pointer]:
+    - img "Logitech Assistant bot icon" [ref=e581]
+```
