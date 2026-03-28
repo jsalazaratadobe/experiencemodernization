@@ -326,6 +326,82 @@ function buildMegaMenu(shopItem) {
   return megaMenu;
 }
 
+function ensureNavContent(nav) {
+  // Ensure brand section exists and has content
+  let brand = nav.querySelector('.nav-brand');
+  if (!brand) {
+    brand = document.createElement('div');
+    brand.classList.add('nav-brand');
+    nav.prepend(brand);
+  }
+  if (!brand.querySelector('a')) {
+    brand.innerHTML = '<div class="default-content-wrapper"><ul><li><a href="/">Logitech</a></li></ul></div>';
+  }
+
+  // Ensure sections section exists and has content
+  let sections = nav.querySelector('.nav-sections');
+  if (!sections) {
+    sections = document.createElement('div');
+    sections.classList.add('nav-sections');
+    brand.after(sections);
+  }
+  if (!sections.querySelector('a')) {
+    sections.innerHTML = `<div class="default-content-wrapper"><ul>
+      <li>
+        <p><strong>Shop</strong></p>
+        <ul>
+          <li><p><strong>Shop by category</strong></p><ul>
+            <li><a href="/en-us/shop/c/mice">Mice</a></li>
+            <li><a href="/en-us/shop/c/keyboards">Keyboards</a></li>
+            <li><a href="/en-us/shop/c/combos">Combos</a></li>
+            <li><a href="/en-us/shop/c/webcams">Webcams</a></li>
+            <li><a href="/en-us/shop/c/ipad-keyboards">iPad Keyboard Cases</a></li>
+            <li><a href="https://www.logitechg.com/en-us">Gaming</a></li>
+          </ul></li>
+          <li><p><strong>More categories</strong></p><ul>
+            <li><a href="/en-us/shop/c/headsets">Headsets</a></li>
+            <li><a href="/en-us/shop/c/microphones">Microphones</a></li>
+            <li><a href="/en-us/shop/c/speakers">Speakers</a></li>
+            <li><a href="/en-us/shop/c/digital-pens">Digital Pens</a></li>
+            <li><a href="/en-us/shop/c/presenters">Presentation Remotes</a></li>
+            <li><a href="/en-us/shop/c/gaming-mouse-pads">Mouse Pads</a></li>
+            <li><a href="/en-us/shop/c/certified-refurb">Refurbished Products</a></li>
+            <li><a href="/en-us/shop/c/accessories">Accessories</a></li>
+            <li><a href="/en-us/shop/c/best-sellers">Best Sellers</a></li>
+          </ul></li>
+          <li><p><strong>Shop your way</strong></p><ul>
+            <li><a href="/en-us/discover/c/master-series">MX Series</a></li>
+            <li><a href="/en-us/discover/c/ergo-series">Ergo Series</a></li>
+            <li><a href="/en-us/discover/c/for-mac">For Mac</a></li>
+            <li><a href="/en-us/discover/c/for-ipad">For iPad</a></li>
+          </ul></li>
+          <li><p><strong>Explore more</strong></p><ul>
+            <li><a href="/en-us/discover/c/mx-creatives">MX for Creatives</a></li>
+            <li><a href="/en-us/discover/c/mx-coders">MX for Coders</a></li>
+            <li><a href="https://www.logitech.com/mobility/mobile-solutions.html">On The Go</a></li>
+            <li><a href="/en-us/discover/c/ultimate-ears">Ultimate Ears</a></li>
+            <li><a href="https://www.logitech.com/business.html">For Business</a></li>
+          </ul></li>
+        </ul>
+      </li>
+      <li><a href="/en-us/software">Software</a></li>
+      <li><a href="/en-us/shop/deals">Deals</a></li>
+      <li><a href="/en-us/planet-and-people/everything-matters">Planet</a></li>
+    </ul></div>`;
+  }
+
+  // Ensure tools section exists and has content
+  let tools = nav.querySelector('.nav-tools');
+  if (!tools) {
+    tools = document.createElement('div');
+    tools.classList.add('nav-tools');
+    sections.after(tools);
+  }
+  if (!tools.querySelector('a')) {
+    tools.innerHTML = '<div class="default-content-wrapper"><ul><li><a href="#">Search</a></li><li><a href="#">Account</a></li><li><a href="/en-us/cart">Cart</a></li></ul></div>';
+  }
+}
+
 function decorateTools(navTools) {
   if (!navTools) return;
   const links = navTools.querySelectorAll('a');
@@ -369,13 +445,18 @@ export default async function decorate(block) {
   block.textContent = '';
   const nav = document.createElement('nav');
   nav.id = 'nav';
-  while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
+  if (fragment) {
+    while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
+  }
 
   const classes = ['brand', 'sections', 'tools'];
   classes.forEach((c, i) => {
     const section = nav.children[i];
     if (section) section.classList.add(`nav-${c}`);
   });
+
+  // Inject default nav content when CMS sections are empty
+  ensureNavContent(nav);
 
   // Strip button classes from brand and add animated sprite logo
   const navBrand = nav.querySelector('.nav-brand');
@@ -443,7 +524,6 @@ export default async function decorate(block) {
         });
 
         // Hover to open on desktop
-        let megaMenuHoverTimeout;
         item.addEventListener('mouseenter', () => {
           if (isDesktop.matches) {
             clearTimeout(megaMenuHoverTimeout);
