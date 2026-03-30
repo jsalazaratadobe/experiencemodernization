@@ -1,0 +1,264 @@
+[
+  {
+    "id": "section",
+    "fields": [
+      {
+        "component": "multiselect",
+        "name": "style",
+        "label": "Style",
+        "valueType": "string",
+        "options": [
+          { "name": "Dark", "value": "dark" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hero-campaign",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Background Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Image Alt Text"
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "label": "Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "hero-product",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Product Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Image Alt Text"
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "label": "Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "cards",
+    "fields": []
+  },
+  {
+    "id": "cards-item",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Image Alt Text"
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "label": "Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "cards-benefit",
+    "fields": []
+  },
+  {
+    "id": "cards-benefit-item",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Icon Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Icon Alt Text"
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "label": "Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "cards-category",
+    "fields": []
+  },
+  {
+    "id": "cards-category-item",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Image Alt Text"
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "label": "Title & Link",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "cards-promo",
+    "fields": []
+  },
+  {
+    "id": "cards-promo-item",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Image Alt Text"
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "label": "Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "cards-quicklinks",
+    "fields": []
+  },
+  {
+    "id": "cards-quicklinks-item",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Icon Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Icon Alt Text"
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "label": "Label & Link",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "cards-thumbnail",
+    "fields": []
+  },
+  {
+    "id": "cards-thumbnail-item",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Product Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Image Alt Text"
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "label": "Label & Link",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "columns",
+    "fields": []
+  },
+  {
+    "id": "columns-item",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "col1",
+        "label": "Column 1",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "col2",
+        "label": "Column 2",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "section-metadata",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "style",
+        "label": "Style"
+      }
+    ]
+  }
+]

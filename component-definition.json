@@ -1,0 +1,215 @@
+{
+  "groups": [
+    {
+      "title": "Content Blocks",
+      "id": "content-blocks",
+      "components": [
+        {
+          "title": "Hero Campaign",
+          "id": "hero-campaign",
+          "model": "hero-campaign",
+          "plugins": {
+            "da": {
+              "name": "hero-campaign",
+              "rows": 2,
+              "columns": 1,
+              "fields": [
+                { "name": "image", "selector": "div:nth-child(1)>picture>img[src]" },
+                { "name": "imageAlt", "selector": "div:nth-child(1)>picture>img[alt]" },
+                { "name": "text", "selector": "div:nth-child(2)" }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Hero Product",
+          "id": "hero-product",
+          "model": "hero-product",
+          "plugins": {
+            "da": {
+              "name": "hero-product",
+              "rows": 2,
+              "columns": 1,
+              "fields": [
+                { "name": "image", "selector": "div:nth-child(1)>picture>img[src]" },
+                { "name": "imageAlt", "selector": "div:nth-child(1)>picture>img[alt]" },
+                { "name": "text", "selector": "div:nth-child(2)" }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Cards",
+          "id": "cards",
+          "model": "cards",
+          "filter": "cards"
+        },
+        {
+          "title": "Cards Item",
+          "id": "cards-item",
+          "model": "cards-item",
+          "plugins": {
+            "da": {
+              "name": "cards-item",
+              "rows": 1,
+              "columns": 2,
+              "fields": [
+                { "name": "image", "selector": "div:nth-child(1)>picture>img[src]" },
+                { "name": "imageAlt", "selector": "div:nth-child(1)>picture>img[alt]" },
+                { "name": "text", "selector": "div:nth-child(2)" }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Cards Benefit",
+          "id": "cards-benefit",
+          "model": "cards-benefit",
+          "filter": "cards-benefit"
+        },
+        {
+          "title": "Cards Benefit Item",
+          "id": "cards-benefit-item",
+          "model": "cards-benefit-item",
+          "plugins": {
+            "da": {
+              "name": "cards-benefit-item",
+              "rows": 1,
+              "columns": 2,
+              "fields": [
+                { "name": "image", "selector": "div:nth-child(1)>picture>img[src]" },
+                { "name": "imageAlt", "selector": "div:nth-child(1)>picture>img[alt]" },
+                { "name": "text", "selector": "div:nth-child(2)" }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Cards Category",
+          "id": "cards-category",
+          "model": "cards-category",
+          "filter": "cards-category"
+        },
+        {
+          "title": "Cards Category Item",
+          "id": "cards-category-item",
+          "model": "cards-category-item",
+          "plugins": {
+            "da": {
+              "name": "cards-category-item",
+              "rows": 1,
+              "columns": 2,
+              "fields": [
+                { "name": "image", "selector": "div:nth-child(1)>picture>img[src]" },
+                { "name": "imageAlt", "selector": "div:nth-child(1)>picture>img[alt]" },
+                { "name": "text", "selector": "div:nth-child(2)" }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Cards Promo",
+          "id": "cards-promo",
+          "model": "cards-promo",
+          "filter": "cards-promo"
+        },
+        {
+          "title": "Cards Promo Item",
+          "id": "cards-promo-item",
+          "model": "cards-promo-item",
+          "plugins": {
+            "da": {
+              "name": "cards-promo-item",
+              "rows": 1,
+              "columns": 2,
+              "fields": [
+                { "name": "image", "selector": "div:nth-child(1)>picture>img[src]" },
+                { "name": "imageAlt", "selector": "div:nth-child(1)>picture>img[alt]" },
+                { "name": "text", "selector": "div:nth-child(2)" }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Cards Quick Links",
+          "id": "cards-quicklinks",
+          "model": "cards-quicklinks",
+          "filter": "cards-quicklinks"
+        },
+        {
+          "title": "Cards Quick Links Item",
+          "id": "cards-quicklinks-item",
+          "model": "cards-quicklinks-item",
+          "plugins": {
+            "da": {
+              "name": "cards-quicklinks-item",
+              "rows": 1,
+              "columns": 2,
+              "fields": [
+                { "name": "image", "selector": "div:nth-child(1)>picture>img[src]" },
+                { "name": "imageAlt", "selector": "div:nth-child(1)>picture>img[alt]" },
+                { "name": "text", "selector": "div:nth-child(2)" }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Cards Thumbnail",
+          "id": "cards-thumbnail",
+          "model": "cards-thumbnail",
+          "filter": "cards-thumbnail"
+        },
+        {
+          "title": "Cards Thumbnail Item",
+          "id": "cards-thumbnail-item",
+          "model": "cards-thumbnail-item",
+          "plugins": {
+            "da": {
+              "name": "cards-thumbnail-item",
+              "rows": 1,
+              "columns": 2,
+              "fields": [
+                { "name": "image", "selector": "div:nth-child(1)>picture>img[src]" },
+                { "name": "imageAlt", "selector": "div:nth-child(1)>picture>img[alt]" },
+                { "name": "text", "selector": "div:nth-child(2)" }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Columns",
+          "id": "columns",
+          "model": "columns",
+          "filter": "columns"
+        },
+        {
+          "title": "Columns Item",
+          "id": "columns-item",
+          "model": "columns-item",
+          "plugins": {
+            "da": {
+              "name": "columns-item",
+              "rows": 1,
+              "columns": 2,
+              "fields": [
+                { "name": "col1", "selector": "div:nth-child(1)" },
+                { "name": "col2", "selector": "div:nth-child(2)" }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Section Metadata",
+          "id": "section-metadata",
+          "model": "section-metadata",
+          "plugins": {
+            "da": {
+              "name": "section-metadata",
+              "type": "key-value-block"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

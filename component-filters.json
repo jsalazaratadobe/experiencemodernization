@@ -1,0 +1,59 @@
+[
+  {
+    "id": "section",
+    "components": [
+      "hero-campaign",
+      "hero-product",
+      "cards",
+      "cards-benefit",
+      "cards-category",
+      "cards-promo",
+      "cards-quicklinks",
+      "cards-thumbnail",
+      "columns",
+      "section-metadata"
+    ]
+  },
+  {
+    "id": "cards",
+    "components": [
+      "cards-item"
+    ]
+  },
+  {
+    "id": "cards-benefit",
+    "components": [
+      "cards-benefit-item"
+    ]
+  },
+  {
+    "id": "cards-category",
+    "components": [
+      "cards-category-item"
+    ]
+  },
+  {
+    "id": "cards-promo",
+    "components": [
+      "cards-promo-item"
+    ]
+  },
+  {
+    "id": "cards-quicklinks",
+    "components": [
+      "cards-quicklinks-item"
+    ]
+  },
+  {
+    "id": "cards-thumbnail",
+    "components": [
+      "cards-thumbnail-item"
+    ]
+  },
+  {
+    "id": "columns",
+    "components": [
+      "columns-item"
+    ]
+  }
+]
