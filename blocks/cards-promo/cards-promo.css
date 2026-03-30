@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 32px;
+  padding: 0 16px;
 }
 
 .cards-promo-container .cards-promo-wrapper {
@@ -55,6 +56,18 @@
   color: var(--text-color);
   text-transform: uppercase;
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cards-promo .cards-promo-card-body a::after {
+  content: "";
+  display: inline-block;
+  width: 33px;
+  height: 5px;
+  background: #00fdcf;
+  border-radius: 2px;
 }
 
 .cards-promo .cards-promo-card-body a.button {
@@ -74,6 +87,12 @@
   .cards-promo-container {
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
+    padding: 0 64px;
+  }
+
+  /* Staggered layout: cards 1 and 3 offset down */
+  .cards-promo-container .cards-promo-wrapper:nth-child(odd) {
+    margin-top: 80px;
   }
 
   .cards-promo .cards-promo-card-body h2 {
