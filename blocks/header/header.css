@@ -637,6 +637,8 @@ header nav .nav-mobile-wishlist svg {
     position: relative;
     text-decoration: none;
     color: var(--text-color);
+    font-size: 18px;
+    font-weight: 400;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > a::after {
