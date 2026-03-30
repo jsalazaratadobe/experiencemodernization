@@ -1,3 +1,22 @@
+/* Section-level styling — match cards-promo alignment */
+.cards-benefit-container {
+  padding: 0 16px;
+  margin: 40px 0;
+}
+
+.cards-benefit-container .default-content-wrapper,
+.cards-benefit-container .cards-benefit-wrapper {
+  padding: 0;
+  max-width: none;
+}
+
+.cards-benefit-container > .default-content-wrapper > h2 {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-color);
+  margin: 0 0 24px;
+}
+
 .cards-benefit > ul {
   list-style: none;
   margin: 0;
@@ -59,6 +78,15 @@
 }
 
 @media (width >= 900px) {
+  .cards-benefit-container {
+    padding: 0 64px;
+    margin: 80px 0;
+  }
+
+  .cards-benefit-container > .default-content-wrapper > h2 {
+    margin: 0 0 40px;
+  }
+
   .cards-benefit > ul {
     grid-template-columns: repeat(3, 1fr);
     gap: 40px 24px;
