@@ -405,13 +405,17 @@ export default async function decorate(block) {
     }
   }
 
-  // Strip button classes from nav-sections links
+  // Strip button classes from nav-sections links and unwrap <p> wrappers
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
     navSections.querySelectorAll('.button').forEach((btn) => {
       btn.className = '';
       const bc = btn.closest('.button-container');
-      if (bc) bc.className = '';
+      if (bc) {
+        bc.className = '';
+        // Unwrap <p> so <a> becomes direct child of <li>
+        if (bc.tagName === 'P') bc.replaceWith(...bc.childNodes);
+      }
     });
   }
 
