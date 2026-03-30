@@ -90,19 +90,19 @@ main .product-category-section h2 {
   font-size: 28px;
   font-weight: 700;
   margin: 0;
-  padding: 48px 32px 24px;
+  padding: 48px 64px 24px;
 }
 
 main .product-category-section .cards-thumbnail-wrapper {
-  padding: 0 32px 48px;
+  padding: 0 64px 48px;
 }
 
 main .product-category-section .cards-thumbnail > ul {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 16px;
-  margin: 0 auto;
-  max-width: 1200px;
+  margin: 0;
+  max-width: none;
   padding: 0;
 }
 
@@ -189,6 +189,7 @@ main .product-category-section .cards-thumbnail .cards-thumbnail-card-body a.but
   main .product-category-section .cards-thumbnail > ul {
     grid-template-columns: repeat(3, 1fr);
     gap: 12px;
+    max-width: none;
   }
 
   main .product-category-section h2 {
