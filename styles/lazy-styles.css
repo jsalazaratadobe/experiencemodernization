@@ -35,9 +35,9 @@ main .section.dark .sustainability-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 32px;
+  max-width: none;
+  margin: 0;
+  padding: 0;
 }
 
 main .section.dark .sustainability-card {
@@ -181,7 +181,8 @@ main .product-category-section .cards-thumbnail .cards-thumbnail-card-body a.but
   main .section.dark .sustainability-cards {
     grid-template-columns: 1fr;
     gap: 16px;
-    padding: 0 16px;
+    padding: 0;
+    max-width: none;
   }
 
   main .section.dark .sustainability-card {
