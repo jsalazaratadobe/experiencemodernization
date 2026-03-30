@@ -4,8 +4,15 @@
   margin: 40px 0;
 }
 
+/* Reset global wrapper padding — container handles it */
+.cards-category-container .default-content-wrapper,
+.cards-category-container .cards-category-wrapper {
+  padding: 0;
+  max-width: none;
+}
+
 /* Section heading ("Discover our most popular...") */
-.cards-category-container > h2 {
+.cards-category-container > .default-content-wrapper > h2 {
   font-size: 16px;
   font-weight: 400;
   color: var(--text-color);
@@ -77,7 +84,7 @@
     margin: 80px 0;
   }
 
-  .cards-category-container > h2 {
+  .cards-category-container > .default-content-wrapper > h2 {
     margin: 0 0 40px;
   }
 
