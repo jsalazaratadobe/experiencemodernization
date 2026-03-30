@@ -116,25 +116,28 @@ function decorateSustainabilitySection(main) {
     if (imgP) imgP.remove();
   });
 
+  // Save any remaining authored content (e.g. heading for the product category section)
+  const extraElements = [...section.children];
+
   // Replace default-content-wrapper contents
   section.textContent = '';
   section.append(header, grid);
 
-  // Move "Shop by product category" out of the dark section into its own section
+  // Move cards-thumbnail (and any authored heading) out of the dark section
   const darkSection = section.closest('.section.dark');
   const thumbWrapper = darkSection ? darkSection.querySelector('.cards-thumbnail-wrapper') : null;
   if (thumbWrapper) {
     const productSection = document.createElement('div');
     productSection.className = 'section product-category-section';
 
-    const headingWrapper = document.createElement('div');
-    headingWrapper.className = 'default-content-wrapper';
-    const heading = document.createElement('h2');
-    heading.id = 'shop-by-product-category';
-    heading.textContent = 'Shop by product category';
-    headingWrapper.append(heading);
+    if (extraElements.length > 0) {
+      const headingWrapper = document.createElement('div');
+      headingWrapper.className = 'default-content-wrapper';
+      extraElements.forEach((el) => headingWrapper.append(el));
+      productSection.append(headingWrapper);
+    }
 
-    productSection.append(headingWrapper, thumbWrapper);
+    productSection.append(thumbWrapper);
     productSection.dataset.sectionStatus = 'initialized';
     darkSection.after(productSection);
   }
