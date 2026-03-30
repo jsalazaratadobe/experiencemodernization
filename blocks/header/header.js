@@ -369,7 +369,9 @@ export default async function decorate(block) {
   block.textContent = '';
   const nav = document.createElement('nav');
   nav.id = 'nav';
-  while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
+  if (fragment) {
+    while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
+  }
 
   const classes = ['brand', 'sections', 'tools'];
   classes.forEach((c, i) => {
@@ -443,7 +445,6 @@ export default async function decorate(block) {
         });
 
         // Hover to open on desktop
-        let megaMenuHoverTimeout;
         item.addEventListener('mouseenter', () => {
           if (isDesktop.matches) {
             clearTimeout(megaMenuHoverTimeout);
