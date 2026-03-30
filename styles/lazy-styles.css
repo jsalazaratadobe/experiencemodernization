@@ -81,7 +81,13 @@ main .section.dark .sustainability-card:hover {
 /* Product category section — standalone section after dark section */
 main .product-category-section {
   background: #fff;
+  padding: 0 64px;
+}
+
+main .product-category-section .default-content-wrapper,
+main .product-category-section .cards-thumbnail-wrapper {
   padding: 0;
+  max-width: none;
 }
 
 main .product-category-section h2 {
@@ -89,12 +95,8 @@ main .product-category-section h2 {
   text-align: left;
   font-size: 16px;
   font-weight: 400;
-  margin: 0;
-  padding: 0 64px 24px;
-}
-
-main .product-category-section .cards-thumbnail-wrapper {
-  padding: 0 64px 48px;
+  margin: 0 0 24px;
+  padding: 0;
 }
 
 main .product-category-section .cards-thumbnail > ul {
@@ -192,12 +194,11 @@ main .product-category-section .cards-thumbnail .cards-thumbnail-card-body a.but
     max-width: none;
   }
 
-  main .product-category-section h2 {
-    padding: 0 16px 16px;
-    font-size: 16px;
+  main .product-category-section {
+    padding: 0 16px;
   }
 
-  main .product-category-section .cards-thumbnail-wrapper {
-    padding: 0 16px 32px;
+  main .product-category-section h2 {
+    margin: 0 0 16px;
   }
 }
