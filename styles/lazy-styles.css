@@ -60,6 +60,7 @@ main .section.dark .sustainability-card img {
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.3s ease;
 }
 
 main .section.dark .sustainability-card-title {
@@ -74,8 +75,8 @@ main .section.dark .sustainability-card-title {
   background: linear-gradient(transparent, rgb(0 0 0 / 50%));
 }
 
-main .section.dark .sustainability-card:hover {
-  opacity: 0.9;
+main .section.dark .sustainability-card:hover img {
+  transform: scale(1.03);
 }
 
 /* Product category section — standalone section after dark section */
