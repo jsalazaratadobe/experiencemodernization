@@ -116,9 +116,31 @@ function decorateSustainabilitySection(main) {
     if (imgP) imgP.remove();
   });
 
+  // Save any remaining authored content (e.g. heading for the product category section)
+  const extraElements = [...section.children];
+
   // Replace default-content-wrapper contents
   section.textContent = '';
   section.append(header, grid);
+
+  // Move cards-thumbnail (and any authored heading) out of the dark section
+  const darkSection = section.closest('.section.dark');
+  const thumbWrapper = darkSection ? darkSection.querySelector('.cards-thumbnail-wrapper') : null;
+  if (thumbWrapper) {
+    const productSection = document.createElement('div');
+    productSection.className = 'section product-category-section';
+
+    if (extraElements.length > 0) {
+      const headingWrapper = document.createElement('div');
+      headingWrapper.className = 'default-content-wrapper';
+      extraElements.forEach((el) => headingWrapper.append(el));
+      productSection.append(headingWrapper);
+    }
+
+    productSection.append(thumbWrapper);
+    productSection.dataset.sectionStatus = 'initialized';
+    darkSection.after(productSection);
+  }
 }
 
 /**
