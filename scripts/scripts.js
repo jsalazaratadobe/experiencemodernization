@@ -119,26 +119,6 @@ function decorateSustainabilitySection(main) {
   // Replace default-content-wrapper contents
   section.textContent = '';
   section.append(header, grid);
-
-  // Move cards-thumbnail out of the dark section into its own section
-  const darkSection = section.closest('.section.dark');
-  const thumbWrapper = darkSection ? darkSection.querySelector('.cards-thumbnail-wrapper') : null;
-  if (thumbWrapper) {
-    const productSection = document.createElement('div');
-    productSection.className = 'section product-category-section';
-
-    // Read authorable heading from section-metadata "heading" key
-    const headingText = darkSection.dataset.heading;
-    if (headingText) {
-      const heading = document.createElement('h2');
-      heading.textContent = headingText;
-      productSection.append(heading);
-    }
-
-    productSection.append(thumbWrapper);
-    productSection.dataset.sectionStatus = 'initialized';
-    darkSection.after(productSection);
-  }
 }
 
 /**
